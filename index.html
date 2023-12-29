@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="section">
+            <h1>String Checker</h1>
+            <input type="text" id="text1"><br>
+            <input type="text" id="text2"><br>
+            <input type="text" id="text3"><br>
+            <button type="button" onclick="check()">Check</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        function check(){
+            var text1 = document.getElementById("text1").value;
+            var text2 = document.getElementById("text2").value;
+            var text3 = document.getElementById("text3").value;
+
+            var resultString = '';
+
+            if(text1.startsWith(text2) && text1.endsWith(text3)){
+                resultString = 'The string starts with "' + text2 + '" and ends with " ' + text3 + '"!';
+            }else{
+                resultString = 'conditions not satisfied.'
+            }
+
+            document.getElementById("result").innerHTML = resultString;
+        }
+    </script>
+</body>
+</html>
